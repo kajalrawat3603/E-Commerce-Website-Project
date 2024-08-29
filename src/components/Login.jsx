@@ -18,7 +18,7 @@ const Login = ({ setIsLoggedIn }) => {
     setButtonText('Signing In...');
   
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('https://e-commerce-website-project.onrender.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
