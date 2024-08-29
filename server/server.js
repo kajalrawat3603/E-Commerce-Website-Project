@@ -537,7 +537,7 @@ app.post("/reset-password", async (req, res) => {
 
 
 app.post("/newsletter",async (req,res)=>{
-    const { email } = req.body;
+    const { email } = req.body.email;
 
     if (!email) {
         return res.status(400).json({ message: 'Email is required' });
@@ -557,7 +557,7 @@ app.post("/newsletter",async (req,res)=>{
         html:'<div><h2>You have been registerd for newsletters,Get E-mails updates on our latest shop and special offers !!! </h2><img src="cid:unique" ></div>',
         attachments:[{
             filename:"6122731.jpg",
-            path:"C:/Users/KAJAL/miniproject/public/images/6122731.jpg",
+            path:"public/images/6122731.jpg",
             cid:"unique",
         }]
     };
