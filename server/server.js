@@ -363,14 +363,6 @@ const validateEmail = (req, res, next) => {
     next(); 
 };
 
-const validatePhone = (req, res, next) => {
-    const phoneRegex = /^\d{10}$/; 
-    if (!phoneRegex.test(req.body.phone)) {
-        return res.status(400).json({ message: 'Invalid phone number format' });
-    }
-    next();
-};
-
 app.post("/login", async (req, res) => {
     const { name, password } = req.body;
     const user = await Account.findOne({ name });
@@ -408,7 +400,7 @@ app.post('/logout', (req, res) => {
 });
 
 
-app.post("/signup", validateEmail, validatePhone, async (req, res) => {
+app.post("/signup", validateEmail, async (req, res) => {
     try {
         const existingUser = await Account.findOne({ $or: [{ name: req.body.name }, { phone: req.body.number }, { email: req.body.email }] });
 
