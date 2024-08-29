@@ -25,7 +25,14 @@ app.use(cors({ origin: 'http://localhost:3000', methods: 'GET,POST,DELETE', cred
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-mongoose.connect("mongodb://127.0.0.1/shopdb");
+//mongoose.connect("mongodb://127.0.0.1/shopdb");
+
+const mongoURI = process.env.MONGODB_URI;
+
+mongoose.connect(mongoURI)
+.then(() => console.log('Connected to MongoDB Atlas'))
+.catch((error) => console.error('Error connecting to MongoDB Atlas:', error));
+
 
 const transport = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -322,7 +329,7 @@ const productSchema = new mongoose.Schema({
       category: "Baby Dress"
     },
   ];
-  
+
   /*Product.insertMany(sampleProducts)
     .then(() => console.log("Sample products added"))
     .catch(err => console.error(err));
