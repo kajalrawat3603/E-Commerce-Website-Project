@@ -8,7 +8,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/user`, {
+        const response = await fetch(`https://e-commerce-website-project.onrender.com/user`, {
           method: 'GET',
           credentials: 'include',
         });
@@ -35,7 +35,7 @@ const UserDetails = () => {
     if (!confirmed) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/blog/${id}`, {
+      const response = await fetch(`https://e-commerce-website-project.onrender.com/blog/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });
