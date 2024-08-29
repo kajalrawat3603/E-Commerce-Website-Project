@@ -365,23 +365,39 @@ const validateEmail = (req, res, next) => {
 
 app.post("/login", async (req, res) => {
     const { name, password } = req.body;
-    const user = await Account.findOne({ name });
 
-    if (!user) {
-        return res.status(400).json({ success: false, message: "User not registered!" });
-    }
+    try {
+        const user = await Account.findOne({ name });
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (isMatch) {
-        const token = jwt.sign({ _id: user._id, name: user.name }, jwt_secret, { expiresIn: '2h' });
-        res.cookie("jwt", token, { httpOnly: true, maxAge: 2 * 60 * 60 * 1000, secure: false }); 
-        res.cookie("isLoggedIn", true, {
-            maxAge: 2 * 60 * 60 * 1000,
-            secure: false
-        });
-        return res.status(200).json({ success: true, message: "Login successful!" });
-    } else {
-        return res.status(400).json({ success: false, message: "Invalid credentials!" });
+        if (!user) {
+            return res.status(400).json({ success: false, message: "User not registered!" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (isMatch) {
+            const token = jwt.sign({ _id: user._id, name: user.name }, jwt_secret, { expiresIn: '2h' });
+            
+            if (!token) {
+                console.error('Token generation failed');
+                return res.status(500).json({ success: false, message: "Token generation failed!" });
+            }
+
+            console.log('Generated Token:', token);
+
+            res.cookie("jwt", token, { httpOnly: true, maxAge: 2 * 60 * 60 * 1000, secure: false });
+            res.cookie("isLoggedIn", true, {
+                maxAge: 2 * 60 * 60 * 1000,
+                secure: false
+            });
+
+            return res.status(200).json({ success: true, message: "Login successful!" });
+        } else {
+            return res.status(400).json({ success: false, message: "Invalid credentials!" });
+        }
+    } catch (error) {
+        console.error('Error in /login:', error);
+        return res.status(500).json({ success: false, message: "Server error!" });
     }
 });
 
