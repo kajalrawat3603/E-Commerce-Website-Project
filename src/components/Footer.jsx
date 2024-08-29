@@ -21,9 +21,7 @@ const Footer = () => {
           'Content-Type': 'application/json',
         },
         credentials: 'include',
-        body: JSON.stringify({
-          email,
-        }),
+        body: JSON.stringify({ email }),
       });
 
       if (!response.ok) {
@@ -33,7 +31,8 @@ const Footer = () => {
       } else {
         setErrorMessage('');
         setButtonText('Signed Up!');
-        navigate('/');
+        setEmail(''); 
+        setTimeout(() => setButtonText('Sign Up'), 2000);
       }
     } catch (error) {
       console.error('Error during newsletter signup:', error);
@@ -41,7 +40,6 @@ const Footer = () => {
       setButtonText('Try Again');
     } finally {
       setLoading(false);
-      setTimeout(() => setButtonText('Sign Up'), 2000);
     }
   };
 
@@ -84,25 +82,24 @@ const Footer = () => {
             <a href="#" className="fas fa-phone links">+ 99 999 999 99</a>
             <a href="#" className="fas fa-print links">+ 99 999 999 99</a>
           </div>
-        
-
-        <section id="newsletter" className="section-p1">
-          <div className="newstext">
-            <h4>Sign up for NewsLetters</h4>
-            <p>Get E-mail updates on our latest shop and special offers</p>
-          </div>
-          <form className="forms" onSubmit={handleSubmit} method="post">
-            <input
-              type="text"
-              name="email"
-              placeholder="Enter Your E-mail"
-              value={email} // Controlled input
-              onChange={(e) => setEmail(e.target.value)} // Update email state
-            />
-            <button type="submit" disabled={loading}>{buttonText}</button> {/* Disable button when loading */}
-          </form>
-          {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message if exists */}
-        </section>
+          <section id="newsletter" className="section-p1">
+            <div className="newstext">
+              <h4>Sign up for NewsLetters</h4>
+              <p>Get E-mail updates on our latest shop and special offers</p>
+            </div>
+            <form className="forms" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" disabled={loading}>{buttonText}</button>
+            </form>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+          </section>
         </div>
         <div className="credit">
           Created by <span>Kajal Rawat</span> | All Rights Reserved
