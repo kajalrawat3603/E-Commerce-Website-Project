@@ -2,6 +2,10 @@
 
 This is a full-stack e-commerce web application built with **React** and **Node.js**. The application allows users to browse products, add them to a cart, and manage their orders. The project includes user authentication, product management, cart functionality, and blog submission features.
 
+## Live Demo
+
+Access the application [here](https://kr-e-commerce.vercel.app).
+
 ## Table of Contents
 
 - [Features](#features)
