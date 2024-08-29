@@ -13,7 +13,7 @@ const Product = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
   try {
-    const response = await fetch(`http://localhost:5000/products/${productId}`, {
+    const response = await fetch(`https://e-commerce-website-project.onrender.com/products/${productId}`, {
       method: 'GET'
     });
     if (!response.ok) {
@@ -69,7 +69,7 @@ const Product = () => {
     };
 
     try {
-        const response = await fetch('http://localhost:5000/cart/add', {
+        const response = await fetch('https://e-commerce-website-project.onrender.com/cart/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
