@@ -44,7 +44,7 @@ const AppContent = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:5000/logout', {
+      await fetch('https://e-commerce-website-project.onrender.com/logout', {
         method: 'POST',
         credentials: 'include',
       });
