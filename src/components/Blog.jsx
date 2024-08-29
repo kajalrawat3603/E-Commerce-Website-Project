@@ -52,7 +52,7 @@ const BlogSection = () => {
     data.append('image', image);
 
     try {
-      const response = await fetch('http://localhost:5000/new-blog', {
+      const response = await fetch('https://e-commerce-website-project.onrender.com/new-blog', {
         method: 'POST',
         body: data,
         credentials: 'include',
