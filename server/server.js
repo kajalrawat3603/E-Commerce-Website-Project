@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.use(cors({
   origin: ['https://kr-e-commerce.vercel.app', 'https://e-commerce-website-project.onrender.com'],
-  methods: 'GET,POST,DELETE',
+  methods: 'GET,POST,PUT,DELETE',
   credentials: true
 }));
 
@@ -375,14 +375,14 @@ app.post("/login", async (req, res) => {
     if (isMatch) {
         const token = jwt.sign({ _id: user._id, name: user.name }, jwt_secret, { expiresIn: '2h' });
         console.log(token);
-        res.cookie("jwt", token, {
-            maxAge: 2 * 60 * 60 * 1000, 
-            httpOnly: true,
-            secure: true,
-            sameSite: 'None',
-            domain: 'kr-e-commerce.vercel.app', 
-            path: '/' 
-        });
+       res.cookie("jwt", token, {
+          maxAge: 2 * 60 * 60 * 1000, 
+          httpOnly: true,
+          secure: true,
+          sameSite: 'None',
+          path: '/' 
+      });
+
         res.cookie("isLoggedIn", true, {
             maxAge: 2 * 60 * 60 * 1000,
             secure: true,
