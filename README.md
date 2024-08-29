@@ -21,23 +21,23 @@ This is a full-stack e-commerce web application built with **React** and **Node.
 #### User Authentication
 - **POST /login:** Authenticate a user and return a JWT.
 - **POST /register:** Register a new user.
-- 
+
 #### Product Management
 - **GET /products:** Fetch all products.
 - **GET /products/:id:** Fetch product details by ID.
-- 
+  
 #### Cart Management
 - **POST /cart/add:** Add a product to the cart.
 - **POST /cart/remove:** Remove a product from the cart.
 - **POST /cart/update:** Update product quantity in the cart.
-- 
+  
 #### Blog Section
 - **POST /new-blog:** Submit a new blog.
 - **GET /blog:** Fetch all blogs.
 - **GET /blog-image/:id:** Fetch a blog image by ID.
-- 
+  
 #### Technologies Used
-- **Frontend:** React, React Router, React Slick, CSS
+- **Frontend:** React, React Router, CSS
 - **Backend:** Node.js, Express, Mongoose
 - **Database:** MongoDB (Atlas)
 - **Authentication:** JWT, bcryptjs
