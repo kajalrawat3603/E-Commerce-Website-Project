@@ -110,7 +110,7 @@ const Signup = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  autoComplete="off"
+                  autoComplete="on"
                 />
               </div>
 
@@ -125,6 +125,7 @@ const Signup = () => {
                   onChange={handleChange}
                   required
                   autoComplete="off"
+                  pattern="\d{10}"
                 />
               </div>
 
@@ -171,6 +172,7 @@ const Signup = () => {
                   autoComplete="off"
                 />
               </div>
+              
               <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }} className="radio">
                 <span>GENDER</span>
                 <div style={{ display: 'flex',justifyContent:'space-evenly',alignItems:'center' ,marginTop:'20px'}}>
