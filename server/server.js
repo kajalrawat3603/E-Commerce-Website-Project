@@ -377,13 +377,16 @@ app.post("/login", async (req, res) => {
         console.log(token);
         res.cookie("jwt", token, {
             maxAge: 2 * 60 * 60 * 1000, 
+            httpOnly: true,
             secure: true,
+            sameSite: 'None',
             domain: 'kr-e-commerce.vercel.app', 
             path: '/' 
         });
         res.cookie("isLoggedIn", true, {
             maxAge: 2 * 60 * 60 * 1000,
             secure: true,
+            sameSite: 'None',
             domain: 'kr-e-commerce.vercel.app', 
             path: '/' 
         });
