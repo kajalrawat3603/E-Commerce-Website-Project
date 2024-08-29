@@ -761,8 +761,7 @@ button:hover {
   height: 60vh;
   background-size: cover;
   background-position: center;
-  margin: 30px 80px;
-  margin-left: 0;
+  margin: 30px 0px 30px 0;
 }
 
 #banner .top {
