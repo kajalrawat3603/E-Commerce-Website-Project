@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/contact', {
+      const response = await fetch('https://e-commerce-website-project.onrender.com/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const Contact = () => {
   
       if (response.ok) {
         const data = await response.json();
-        alert(data.message);  // Now showing the correct success message
+        alert(data.message); 
         setFormData({
           name: '',
           email: '',
