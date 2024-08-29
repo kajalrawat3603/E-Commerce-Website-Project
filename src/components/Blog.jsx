@@ -17,7 +17,7 @@ const BlogSection = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
         try {
-            const response = await fetch('http://localhost:5000/blog');
+            const response = await fetch('https://e-commerce-website-project.onrender.com/blog');
             const data = await response.json();
             setBlogEntries(data);  // `data` will be a flattened array of blog entries.
         } catch (error) {
@@ -60,7 +60,7 @@ const BlogSection = () => {
 
       if (response.ok) {
         setMessage('Blog entry submitted successfully!');
-        const updatedBlogs = await fetch('http://localhost:5000/blog');
+        const updatedBlogs = await fetch('https://e-commerce-website-project.onrender.com/blog');
         const updatedData = await updatedBlogs.json();
         setBlogEntries(updatedData);
         setFormData({
@@ -88,7 +88,7 @@ const BlogSection = () => {
       const urls = {};
       for (const entry of blogEntries) {
         try {
-          const response = await fetch(`http://localhost:5000/blog-image/${entry._id}`);
+          const response = await fetch(`https://e-commerce-website-project.onrender.com/blog-image/${entry._id}`);
           if (response.ok) {
             const { base64Image, contentType } = await response.json();
             urls[entry._id] = `data:${contentType};base64,${base64Image}`;
@@ -107,7 +107,7 @@ const BlogSection = () => {
 
   const checkAuthAndRedirect = async () => {
     try {
-      const response = await fetch('http://localhost:5000/check-auth', {
+      const response = await fetch('https://e-commerce-website-project.onrender.com/check-auth', {
         method: 'GET',
         credentials: 'include', 
       });
