@@ -536,41 +536,50 @@ app.post("/reset-password", async (req, res) => {
 });
 
 
-app.post("/newsletter",async (req,res)=>{
-    const { email } = req.body.email;
+app.post("/newsletter", async (req, res) => {
+  const { email } = req.body;
 
-    if (!email) {
-        return res.status(400).json({ message: 'Email is required' });
-    }
+  if (!email) {
+    return res.status(400).json({ message: 'Email is required' });
+  }
+
+  try {
     const existingSubscriber = await Newsletter.findOne({ email });
-        if (existingSubscriber) {
-            return res.status(400).json({ message: 'Email already subscribed' });
-        }
+    if (existingSubscriber) {
+      return res.status(400).json({ message: 'Email already subscribed' });
+    }
 
-        const newSubscriber = new Newsletter({ email });
-        await newSubscriber.save();
+    const newSubscriber = new Newsletter({ email });
+    await newSubscriber.save();
 
     const mailOptions = {
-        from: 'krproject00@example.com',
-        to: req.body.email,
-        subject: 'NewsLetters Registration',
-        html:'<div><h2>You have been registerd for newsletters,Get E-mails updates on our latest shop and special offers !!! </h2><img src="cid:unique" ></div>',
-        attachments:[{
-            filename:"6122731.jpg",
-            path:"public/images/6122731.jpg",
-            cid:"unique",
-        }]
+      from: 'krproject00@example.com',
+      to: email,
+      subject: 'Newsletters Registration',
+      html: '<div><h2>You have been registered for newsletters. Get email updates on our latest shop and special offers!</h2><img src="cid:unique" /></div>',
+      attachments: [{
+        filename: "6122731.jpg",
+        path: path.join(__dirname, '../public/images/6122731.jpg'),
+        cid: "unique",
+      }],
     };
 
-    transport.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
+    transport.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+        return res.status(500).json({ message: 'Error sending email' });
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
     });
-    res.redirect("/index.html");
-})
+
+    res.status(200).json({ message: 'Subscription successful' });
+  } catch (err) {
+    console.error('Server error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 app.use(cookieParser());
 app.use(express.json());
