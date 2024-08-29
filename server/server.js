@@ -385,10 +385,16 @@ app.post("/login", async (req, res) => {
 
             console.log('Generated Token:', token);
 
-            res.cookie("jwt", token, { httpOnly: true, maxAge: 2 * 60 * 60 * 1000, secure: false });
+            res.cookie("jwt", token, {
+                httpOnly: true,
+                maxAge: 2 * 60 * 60 * 1000,
+                secure: false,
+                path: '/',
+            });
             res.cookie("isLoggedIn", true, {
                 maxAge: 2 * 60 * 60 * 1000,
-                secure: false
+                secure: false,
+                path: '/',
             });
 
             return res.status(200).json({ success: true, message: "Login successful!" });
@@ -404,17 +410,19 @@ app.post("/login", async (req, res) => {
 app.post('/logout', (req, res) => {
     res.cookie('jwt', '', {
         expires: new Date(0), 
-        httpOnly: true,  
+        httpOnly: true,
         secure: false,
+        path: '/',
     });
     
     res.cookie('isLoggedIn', '', {
         expires: new Date(0),
         secure: false,
+        path: '/',
     });
+
     res.status(200).json({ message: 'Logged out successfully' });
 });
-
 
 app.post("/signup", validateEmail, async (req, res) => {
     try {
