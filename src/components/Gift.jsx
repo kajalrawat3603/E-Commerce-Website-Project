@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../style.css'; // Ensure you have corresponding CSS for styling
+import '../style.css';
 
 const Gift = () => {
     const slides = [
