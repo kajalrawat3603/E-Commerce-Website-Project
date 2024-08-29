@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div >
-      <section className='hero bg1' style={{ backgroundImage: 'url("/images/sale1.jpg")' }}>
+      <section className='hero'>
+      <img className='bg' src='images/sale1.jpg'/>
       <div className="snow">
         <div></div>
       </div>
