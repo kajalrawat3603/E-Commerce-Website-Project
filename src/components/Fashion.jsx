@@ -47,7 +47,8 @@ const Fashion = () => {
 
   return (
     <div style={{display:'flex',flexDirection:'column'}}>
-      <section className='hero bg2'>
+      <section className='hero'>
+          <img className='bg' src='images/sale2.jpg'/>
         {/*
         <h4 style={{ fontSize: '7.5rem', fontFamily: "'Explora', cursive" }}>
           "Massive Price Drop Alert"
