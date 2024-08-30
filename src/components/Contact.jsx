@@ -49,40 +49,23 @@ const Contact = () => {
     <>
       <div 
         className="banner" 
-        style={{ 
-          width: '100%', 
-          paddingTop: '0px', 
-          backgroundImage: 'url(images/v748-toon-103.jpg)', 
-          backgroundRepeat: 'repeat', 
-          height: '20vh' 
-        }}
       >
-        <h1 style={{ textAlign: 'center', paddingTop: '2vh', fontSize: '8vh' }}>
+        <h1>
           NEED HELP !!!
         </h1>
         <p style={{ textDecoration: 'underline', textAlign: 'center' }}>
           Contact Us
         </p>
       </div>
-      <div style={{ display: 'flex', width: '100vw', height: 'max-content', alignItems: 'center' }}>
+      <div className='query-container'>
         <div 
-          className="login-form-container query" 
-          style={{ 
-            backgroundImage: 'url(images/top-view-chat-bubbles-with-telephone-receiver-copy-space.jpg)', 
-            backgroundSize: 'cover', 
-            padding: '10px',
-            height: '35vw', 
-            width: '90%' 
-          }}
+          className="query" 
         >
-          <div className="query">
+          <div className="query-form">
             <form 
               onSubmit={handleSubmit} 
-              style={{ 
-                width: '50%',
-                height: '34vw'
-              }}
             >
+              <div className='qbox'>
               <label htmlFor="name">Name
                 <input 
                   type="text" 
@@ -147,25 +130,23 @@ const Contact = () => {
                   style={{ height: '3rem', borderRadius: '8px' }} 
                 />
               </label>
-
+              </div>
               <label htmlFor="message">Query Details
                 <textarea 
                   placeholder="Enter Your Query" 
                   id="message" 
                   name="query" 
-                  rows="8"
                   value={formData.query}
                   onChange={handleChange}
-                  style={{ fontSize: '1.2rem', margin: '5px' }} 
                 />
               </label>
 
-              <input type="submit" className="btn" />
+              <input type="submit" className="qbtn" />
             </form>
           </div>
         </div>
       </div>
-      <div style={{ textAlign: 'center', marginTop: '4rem', zIndex: 'inherit' }}>
+      <div className='q-details'>
         <h3 style={{ fontWeight: '400' }}> For Customer Support & Queries:</h3>
         <p>Call us at Customer Care no. : 1800-000-1111</p>
         <p>Email us at kr@gmail.com</p>
