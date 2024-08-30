@@ -2191,7 +2191,8 @@ polygon.arrow-top {
   .blog-box {
     width:100%;
   }
-  .blog-box {
+  
+  #blog {
     padding:10px;
   }
   
