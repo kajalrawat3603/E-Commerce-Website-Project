@@ -86,7 +86,7 @@ const Signup = () => {
             </a>
             
             <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>NAME</span>
                 <input 
                   type="text"
@@ -100,7 +100,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>EMAIL</span>
                 <input 
                   type="text"
@@ -114,7 +114,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>PHONE NUMBER</span>
                 <input 
                   type="text"
@@ -131,7 +131,7 @@ const Signup = () => {
 
               
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>AGE</span>
                 <input 
                   type="text"
@@ -145,7 +145,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>COUNTRY</span>
                 <input 
                   type="text"
@@ -159,7 +159,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>ADDRESS</span>
                 <input 
                   type="text"
@@ -173,7 +173,7 @@ const Signup = () => {
                 />
               </div>
               
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }} className="radio">
+              <div className="label" className="radio">
                 <span>GENDER</span>
                 <div style={{ display: 'flex',justifyContent:'space-evenly',alignItems:'center' ,marginTop:'20px'}}>
                   <label style={{ display: 'flex' }}>
@@ -211,7 +211,7 @@ const Signup = () => {
                   </label>
                 </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>PASSWORD</span>
                 <input 
                   type="password"
@@ -225,7 +225,7 @@ const Signup = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', width: '30%' }}>
+              <div className="label">
                 <span>CONFIRM PASSWORD</span>
                 <input 
                   type="password"
