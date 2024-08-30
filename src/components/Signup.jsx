@@ -77,7 +77,7 @@ const Signup = () => {
             className='mrg'
             onSubmit={handleSubmit}
           >
-            <h2 style={{ margin: '0px 30%', marginBlockStart: '0em', marginBlockEnd: '0em', lineHeight: '0' }}>
+            <h2>
               Enter Your Details
             </h2>
             <a href="/">
