@@ -70,7 +70,7 @@ const Login = ({ setIsLoggedIn }) => {
           </div>
         </div>
         <div style={{ zIndex: 1 }}>
-          <form onSubmit={handleSubmit} style={{ width: '50%', float: 'right' }} className='mrg'>
+          <form onSubmit={handleSubmit} style={{ width: '50%', float: 'right',margin: '1rem 1rem 4rem 0' }}'>
             <a href="/">
               <i className="fa fa-times" style={{ float: 'right', color: 'lavenderblush' }}></i>
             </a>
