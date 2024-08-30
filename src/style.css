@@ -969,13 +969,8 @@ button:hover {
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
   position: absolute;
-  width: 94%;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 20px;
-  flex-wrap: wrap;
-  align-items: center;
 }
+
 
 .login-form-container .poster {
 
@@ -1075,6 +1070,12 @@ button:hover {
   background-color: rgba(136, 21, 59, 0.323);
   color: lavenderblush;
   border: 2px solid lavenderblush;
+}
+
+.login-form-container form h1{
+  margin: 0px 30%;
+  margin-block: 0em;
+  line-height: 0;
 }
 
 .radio-group {
@@ -2208,8 +2209,11 @@ polygon.arrow-top {
 }
 
 @media (max-width:799px) {
- 
   
+  .login-form-container form h1{
+    margin: 0px;
+    font-size: x-large;
+  }
   .offers {
     flex-direction: column;
     align-items: baseline;
@@ -2378,7 +2382,7 @@ polygon.arrow-top {
   }
 
   .login-form-container form {
-    width: 50vw;
+    width: auto;
     height: auto;
   }
 
@@ -2394,9 +2398,7 @@ polygon.arrow-top {
 
 @media (max-width:477px) {
   
-  .login-form-container form h1{
-    font-size: x-large;
-  }
+  
   
   .login-form-container form .label{
     width: 100%;
