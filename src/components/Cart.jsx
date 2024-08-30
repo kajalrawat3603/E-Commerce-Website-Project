@@ -191,7 +191,7 @@ const Cart = () => {
       <div style={{ padding: '10px 10px' }}>
         <h3>Secure Payment With</h3>
         <ul className="securly-ul-section" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="images/Visa.jpg" alt="Payment Method 1" style={{ height: '30px', width: '70px', marginRight: '15px' }} />
+          <img src="images/Visa.png" alt="Payment Method 1" style={{ height: '30px', width: '70px', marginRight: '15px' }} />
           <img src="images/masterCard.png" alt="Payment Method 2" style={{ height: '30px', width: '70px', marginRight: '15px' }} />
           <img src="images/GPay.png" alt="Payment Method 3" style={{ height: '30px', width: '70px', marginRight: '15px' }} />
           <img
