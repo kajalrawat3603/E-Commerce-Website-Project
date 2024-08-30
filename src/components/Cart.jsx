@@ -130,7 +130,7 @@ const Cart = () => {
       </header>
 
       <div className="container">
-        <div id="cart" style={{ width: '50%' }}>
+        <div id="cart">
           {cartItems.length === 0 ? (
             <h1>Your cart is empty</h1>
           ) : (
