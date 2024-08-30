@@ -969,6 +969,12 @@ button:hover {
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
   position: absolute;
+  width: 94%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .login-form-container .poster {
@@ -1080,6 +1086,12 @@ button:hover {
 input[type="radio" i] {
   cursor: pointer;
   size: 10cm;
+}
+
+.login-form-container form  .label{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
 
 /*
@@ -2366,7 +2378,7 @@ polygon.arrow-top {
   }
 
   .login-form-container form {
-    width: 100%;
+    width: 50vw;
     height: auto;
   }
 
@@ -2381,6 +2393,15 @@ polygon.arrow-top {
 }
 
 @media (max-width:477px) {
+  
+  .login-form-container form h1{
+    font-size: x-large;
+  }
+  
+  .login-form-container form .label{
+    width: 100%;
+  }
+  
   .link_box h3 {
     font-size: 1.2rem;
   }
