@@ -184,6 +184,33 @@ const Nav = ({ isLoggedIn, onLogout }) => {
         </ul>
       </div>
       <div id="mobile">
+      {isLoggedIn ? (
+              <>
+                  <img
+                    src="images/loggedin.png" style={{ width: '20px' ,display:'block'}}
+                    alt="User" title="User" onClick={handleDropdownToggle} 
+                  />
+                {isDropdownOpen && (
+                  <div className="sub-menu" style={{ zIndex:100}}>
+                    <ul>
+                    <li><a href="/user">User Details</a></li>
+                    <li>
+                    <a href="#" onClick={onLogout}>Logout</a>
+                    </li>
+                    </ul>
+                  </div>
+                )}
+              </>
+            ) : (
+              <a href="/login">
+                <img
+                  title="Login"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClklEQVR4nO2VTWgTQRTHpwo1jULqx6UeWohCCtqvSNlsM7vzf7vTNoeQW9CTN6/iWS8WURDBowoFsRcRRcSiB+mlCr15E48K7UEqqLcqYpORFzYyhCRNsvGkD4bJzvv4vZl58yLEf2kj5XJ5fy6XO8Kz+MsyoJQ6B+ANgF0iWucZwGsAZ1nfV9r8/PxBAM+JyFhjveH7WbFYTPYNCuCpDQDwMwiCxzw3gJ/0BUhEJSvoLwCXC4XCAdbxzN+8XrdRShVjQwG8tKBXWyS2ZJ3CamwoEX2LAlallIeb2fA66yPol7jMAQCVToKxPrKrxK5kANscbGFhwYyPj480s/E8b8S6gk8irhDRozAMzeTkpBFCLLewWbbu9GFsaBiG7uLiYnVoaIihZmxsbKVUKmWEEPuIKANgxdplFYAj+iGu695OJBIMNEEQGM/zjO/79vus7/JWX4BKqWMA7tYLqtkAYNLpdCWZTN4Jw/BoXOBpIvrYDOT7ftV13drviYmJ2tEPDw9zwX0golO9Ak8C+Grthpv8AwAh92K2KZfLh6SUenBwcEUIsZvJZIzWuva8iOhEV0CtdYqIPlvAzSAIsu18UqnUmUKhsGn5bHNS3ezyhXWU37XWox0mO0pEPyzf1U6BCSL6UzRKqaWOsxVCBEFwzdptpf7n0FY8z7skpaw9CaXUjuhBfN/f4WfFcaSUF/d0cBxnbXZ21jiOY/L5/KteoHNzc2vsz3FyudzeMbLZ7PupqSkzPT3N4Bu9QB3Hucn+3DpnZmbe7enguu696Fj4TraI6G3jAHCfbXluod9i/3w+bzheR5lKKa+06j5RgWxE0I12XcrzvOtdHRERnY8aQtfQyO+C6EW01sfDMEw3Dl7vRC/+efkNwwaRC2KVvtwAAAAASUVORK5CYII="
+                  alt="Login"
+                />
+              </a>
+            )}
+      {isLoggedIn && 
         <a href="/cart">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA9ElEQVRIid3UPy5EURzF8Q8FCgURNY0FSMQaDInKVqxBZgMqyRTCCqaU0NuBckaFkjwKf4r7S7yMZNz7vCfhJLf7/s45N/eXy3/RG97jDLoIeK0FPGO1ixAY1oKansu64exEwHELJafefgY30WS3wHQJ9zG3/x18GOCwIKAfM1c58DKepM3ayODXUQW/ldtoEI36Gex5sKe55rAZQw9YmMJtS80rrJUEwLX81TwqNV/BXYZxhTPMlwachMGFtLqtalH6Ll7kbVGx5vCo2TeRrQN5b9A4oHPt4RZj9Frgvmjs89qjn3CT3/WvqSe1G2GnBe4P6wMWynZC39nrkQAAAABJRU5ErkJggg=="
@@ -191,6 +218,7 @@ const Nav = ({ isLoggedIn, onLogout }) => {
             alt="Cart"
           />
         </a>
+      }
         <i id="bar" className="fas fa-outdent"></i>
       </div>
     </nav>
