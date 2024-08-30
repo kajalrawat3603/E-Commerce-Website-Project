@@ -76,7 +76,6 @@ const Signup = () => {
           <form
             className='mrg'
             onSubmit={handleSubmit}
-            style={{ width: '94%', height: '80%', display: 'flex', justifyContent: 'space-around', paddingTop: '20px', flexWrap: 'wrap', alignItems: 'center' }}
           >
             <h2 style={{ margin: '0px 30%', marginBlockStart: '0em', marginBlockEnd: '0em', lineHeight: '0' }}>
               Enter Your Details
@@ -173,7 +172,7 @@ const Signup = () => {
                 />
               </div>
               
-              <div className="label" className="radio">
+              <div className="label radio">
                 <span>GENDER</span>
                 <div style={{ display: 'flex',justifyContent:'space-evenly',alignItems:'center' ,marginTop:'20px'}}>
                   <label style={{ display: 'flex' }}>
