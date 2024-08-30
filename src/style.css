@@ -1976,6 +1976,56 @@ input[type="radio" i] {
   border-radius: 10px;
 }
 
+
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: lavenderblush;
+  width: 40px;
+  height: 45px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 35px;
+  font-weight: bolder;
+  margin: 20px 10px;
+  transform: rotate(180deg);
+  mix-blend-mode: difference;
+  z-index: 5;
+}
+
+#more-arrows {
+  width: 30px;
+  height: 45px;
+}
+
+#more-arrows:hover polygon {
+  transition: all 0.2s ease-out;
+  mix-blend-mode: difference;
+}
+
+#more-arrows:hover polygon.arrow-bottom {
+  transform: translateY(-18px);
+}
+
+#more-arrows:hover polygon.arrow-top {
+  transform: translateY(18px);
+}
+
+polygon {
+  transition: all 0.2s ease-out;
+  fill: #FFF;
+}
+
+polygon.arrow-middle {
+  opacity: 0.75;
+}
+
+polygon.arrow-top {
+  opacity: 0.5;
+}
+
 @media (max-width:1260px) {
   .bg{
     height: 100vw;
