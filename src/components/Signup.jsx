@@ -76,6 +76,7 @@ const Signup = () => {
           <form
             className='mrg'
             onSubmit={handleSubmit}
+            style={{width:'auto'}}
           >
             <h2>
               Enter Your Details
