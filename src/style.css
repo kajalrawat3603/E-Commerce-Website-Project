@@ -957,10 +957,6 @@ button:hover {
   right: 0;
 }
 
-.mrg {
-  margin: 1rem 1rem 4rem 0rem;
-}
-
 .login-form-container form {
   background: rgba(99, 5, 99, 0.364);
   border: var(--border);
@@ -971,11 +967,23 @@ button:hover {
   position: absolute;
 }
 
+.mrg{
+    margin: 1rem 1rem 4rem 0rem;
+    align-items: center;
+    background: rgba(99, 5, 99, .364);
+    border: var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 1rem 2rem;
+    position: absolute;
+    width: auto;
+}
 
 .login-form-container .poster {
-
   height: 27rem;
-
 }
 
 .login-form-container form h3 {
