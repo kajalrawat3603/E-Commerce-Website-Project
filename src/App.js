@@ -72,7 +72,6 @@ const AppContent = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/user" element={<UserDetails />} />
       </Routes>
-      <ScrollToTop />
       {!hideNavAndFooter && <Footer />}
     </>
   );
@@ -81,6 +80,7 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );
