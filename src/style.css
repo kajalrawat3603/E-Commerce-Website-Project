@@ -1668,8 +1668,8 @@ p {
 .blog-details {
   word-wrap: break-word;
   text-align: start;
-  align-items: center;
-  margin: 15px 15px;
+  margin: 15px;
+  padding-right:3px;
 }
 
 .blog-details a {
@@ -2184,10 +2184,8 @@ polygon.arrow-top {
   .query-form label {
     width: 100%;
   }
-}
-
-@media (max-width:799px) {
   
+   
   .blog-box {
     width:100%;
   }
@@ -2195,6 +2193,10 @@ polygon.arrow-top {
   #blog {
     padding:10px;
   }
+}
+
+@media (max-width:799px) {
+ 
   
   .offers {
     flex-direction: column;
