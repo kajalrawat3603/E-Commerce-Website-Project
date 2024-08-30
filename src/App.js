@@ -57,7 +57,6 @@ const AppContent = () => {
 
   return (
     <>
-      <ScrollToTop />
       {!hideNavAndFooter && <Nav isLoggedIn={isLoggedIn} onLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -73,6 +72,7 @@ const AppContent = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/user" element={<UserDetails />} />
       </Routes>
+      <ScrollToTop />
       {!hideNavAndFooter && <Footer />}
     </>
   );
