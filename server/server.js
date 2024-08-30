@@ -490,7 +490,7 @@ app.post("/forgot-password", validateEmail, async (req, res) => {
     user.resetTokenExpire = Date.now() + 3600000; 
     await user.save();
 
-    const resetLink = `http://localhost:3000/reset-password/${resetToken}`;
+    const resetLink = `https://kr-e-commerce.vercel.app/reset-password/${resetToken}`;
 
     const mailOptions = {
         from: 'krproject00@example.com',
